@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/singer/singer",
+    "pages/category/category",
+    "pages/album/album",
+    "pages/singerpage/singerpage",
+    "pages/details/details",
+    "pages/songlist/songlist",
+    "pages/search/search",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#69c3aa",
+    "navigationBarTitleText": "HALSTEAD音乐馆",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#989898",
+    "selectedColor": "#6CC4AB",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "音乐馆",
+        "iconPath": "/assets/tab_icon/音乐 (3).png",
+        "selectedIconPath": "/assets/tab_icon/音乐 (2).png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "歌单",
+        "iconPath": "/assets/tab_icon/类目 品类 分类 类别.2 (1).png",
+        "selectedIconPath": "/assets/tab_icon/类目 品类 分类 类别.2.png"
+      },
+      {
+        "pagePath": "pages/singer/singer",
+        "text": "歌手",
+        "iconPath": "/assets/tab_icon/歌手 (1).png",
+        "selectedIconPath": "/assets/tab_icon/歌手.png"
+      }
+    ]
+  }
+}

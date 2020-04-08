@@ -1,0 +1,87 @@
+.category-item {
+  float: left;
+  width: 20%;
+  /* height: 300px; */
+  background: red;
+}
+
+.category-item .item {
+  background-color: #69c3aa;
+  /* height: 1200px; *//* min-height: 400px; */
+}
+
+.category-item .item view {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+.category-item .item view.con {
+  background: #fff;
+  color: #69c3aa;
+}
+
+.content-item {
+  float: left;
+  width: 80%;
+  /* height: 300px; *//* background: blue; */
+}
+
+.content-item .content {
+  /* background-color: red; *//* height: 1200px; */
+  width: 100%;
+}
+
+.content-item .content image {
+  width: 135%;
+}
+
+/* 右边 */
+.list{
+  margin-top: 15px;
+}
+.list .list-header {
+  /* text-align: center; */
+  font-weight: bold;
+  padding: 5px 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.list .list-content .item {
+  float: left;
+  width: 28%;
+  height: 130px;
+  margin-right: 3.5%;
+}
+.list .list-content .item:nth-child(1n){
+  margin-left: 2%;
+}
+.list .list-content .item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.list .list-content .item .pic {
+  width: 100%;
+  height: 80px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.list .list-content .item .pic image {
+  width: 100%;
+  height: 80px;
+}
+
+.list .list-content .item .text {
+}
+
+.list .list-content .item .text text {
+  font-size: 12px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

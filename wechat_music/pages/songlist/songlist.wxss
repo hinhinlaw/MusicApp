@@ -1,0 +1,197 @@
+.song-list {
+}
+
+.song-list .header {
+  padding: 40px 0 0;
+  height: 200px;
+  width: 100%;
+  border: 1px solid #fff;
+}
+
+.header .bg {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 237px;
+  width: 100%;
+  background-blend-mode:color-dodge;
+  background-color: rgba(1,1,1,.8);
+  /* background-image: url('http://p3.music.126.net/se7EhPIomDlfVksMiKpmnQ==/109951164661235743.jpg?param=200y200'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(5px);
+}
+
+.song-list .header .top {
+  height: 80%;
+}
+
+.song-list .header .top .pic {
+  float: left;
+  width: 30%;
+  height: 100px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.song-list .header .top .pic image {
+  width: 100%;
+  height: 100%;
+}
+
+.song-list .header .top .profile {
+  position: relative;
+  float: left;
+  width: 66%;
+  height: 110px;
+  margin-left: 4%;
+}
+
+.song-list .header .top .profile .list-name {
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.song-list .header .top .profile .user {
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+  color: #fff;
+  /* color: #ccc; */
+}
+
+.song-list .header .top .profile .user .icon {
+  float: left;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.song-list .header .top .profile .user .icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.song-list .header .top .profile .user .user-name {
+  float: left;
+  margin-top: 2px;
+  margin-left: 4px;
+  font-size: 12px;
+}
+
+.song-list .header .top .profile .abstract {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+    color: #fff;
+}
+
+.song-list .header .bottom {
+  margin-top: 20px;
+}
+
+.song-list .header .bottom .collect {
+  float: left;
+  margin-left: 20%;
+  color: #69c3aa;
+}
+
+.song-list .header .bottom .collect icon {
+  margin-right: 4px;
+}
+
+.song-list .header .bottom .share {
+  float: right;
+  margin-right: 20%;
+  color: #69c3aa;
+}
+
+.song-list .header .bottom .share icon {
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+.song-list .header .bottom .share {
+  position: relative;
+  width: 62px;
+}
+
+.song-list .header .bottom .share text {
+  /* margin-top: -2px; */
+  width: 42px;
+  position: absolute;
+  top: 4px;
+  right: -2px;
+}
+
+/* 列表 */
+.list{}
+.list .item{
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+.list .item .no{
+  float: left;
+  width: 7%;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+
+}
+.list .item .profile{
+  float: left;
+  width: 80%;
+  margin-left: 3%;
+}
+.list .item .icon{
+  float: right;
+  width: 10%;
+  margin-top: 6px;
+  /* height: 20px; */
+}
+.list .item .icon icon{
+  font-size: 24px;
+  color: #69c3aa;
+}
+.list .item .profile .song-name{
+  font-weight: bold;
+  letter-spacing: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.list .item .profile .others{}
+.list .item .profile .others .tag{
+  width: 16px;
+  height: 10px;
+  margin-top: 7px;
+  margin-right: 5px;
+  line-height: 10px;
+  float: left;
+  font-size: 8px;
+  color: orange;
+  border: 1px solid orange;
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.list .item .profile .others .hq{
+  color:green;
+  border: 1px solid green;
+}
+.list .item .profile .others .singer{
+  float: left;
+  width: auto;
+  margin-top: 5px;
+  /* margin-left: 5px; */
+  font-size: 12px;
+  color: darkgrey;
+}

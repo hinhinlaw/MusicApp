@@ -1,0 +1,56 @@
+<!-- 搜索框 -->
+<view class="search">
+  <view class="wrapper">
+    <view class="box clearfix">
+      <icon class="iconfont icon-xingtaiduICON_sousuo--"></icon>
+      <input type="text" placeholder="搜索音乐" bindinput="search"></input>
+    </view>
+    <view class="resultList" wx:for="{{songList}}" wx:key="index">
+      <view class="resultItem">
+        <navigator url="/pages/details/details?id={{item.id}}" hover-class="none">
+          <icon class="iconfont icon-xingtaiduICON_sousuo--"></icon>
+          <text class="song-name">{{item.songName}}</text>
+          <text class="singer">{{item.singer}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 热门搜索 -->
+
+<view class="hot-search" hidden="{{show}}">
+  <view class="wrapper">
+    <view class="header">热门搜索</view>
+    <view class="search-list clearfix">
+      <view>世界这么大还是遇见你</view>
+      <view>春娇与志明</view>
+      <view>陈奕迅</view>
+      <view>经典摇滚</view>
+      <view>223's</view>
+      <view>冰糖炖雪梨</view>
+      <view>太一</view>
+      <view>三千鸦杀</view>
+      <view>旅行中忘记</view>
+      <view>解脱</view>
+      <view>王俊凯</view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 历史记录 -->
+
+<view class="history" hidden="{{show}}">
+  <view class="wrapper">
+    <view class="header clearfix">
+      <view class="left">历史记录</view>
+      <view class="right">
+        <icon class="iconfont icon-delete"></icon>
+      </view>
+    </view>
+    <view class="history-list clearfix">
+      <view>麦浚龙</view>
+    </view>
+  </view>
+</view>

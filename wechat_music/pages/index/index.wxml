@@ -1,0 +1,115 @@
+<!-- 搜索 -->
+<view class="search">
+  <view class="wrapper">
+    <view class="box clearfix">
+      <navigator url="/pages/search/search">
+        <view class="text">搜索</view>
+        <icon class="iconfont icon-xingtaiduICON_sousuo--"></icon>
+      </navigator>
+    </view>
+  </view>
+</view>
+<!-- 轮播图 -->
+<view>
+  <swiper indicator-dots="{{indicatorDots}}" indicator-active-color="#00b26a" indicator-color="#5cafa4" autoplay="true">
+    <block wx:for="{{msg}}" wx:key="index">
+      <swiper-item>
+        <view class="item">
+          <image src="{{item.img}}"></image>
+          <text>{{item.text}}</text>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 热门歌单 -->
+<view class="hot-song-list">
+  <view class="wrapper">
+    <view class="header clearfix">
+      <view class="left">
+        热门歌单
+      </view>
+      <view class="right">
+        更多
+      </view>
+    </view>
+    <scroll-view class="scrollBar" scroll-x="true" style="width: {{screenWidth}}px;margin:0 auto;">
+      <view class="scroll-item">
+        <view class="list clearfix">
+          <view class="item" wx:for="{{hotSongList}}" wx:key="index">
+            <navigator url="/pages/songlist/songlist?id={{item.id}}" hover-class="none">
+              <view class="pic">
+                <image src="{{item.coverImgUrl}}"></image>
+              </view>
+              <view class="text">
+                <text>{{item.name}}</text>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 歌曲推荐 -->
+<view class="song-recommend">
+  <view class="wrapper">
+    <view class="header clearfix">
+      <view class="left">
+        歌曲推荐
+      </view>
+      <!-- <view class="right">
+        更多
+      </view> -->
+    </view>
+    <view class="list">
+      <view class="item clearfix" wx:for="{{songRecommend}}" wx:key="index">
+        <navigator url="/pages/details/details?id={{item.id}}" hover-class="none">
+          <view class="pic">
+            <image src="{{item.img}}"></image>
+          </view>
+          <view class="song-msg">
+            <view class="song-name">{{item.songName}}</view>
+            <view class="singer clearfix">
+              <view>SQ</view>
+              <view>{{item.singer}}</view>
+            </view>
+          </view>
+          <view class="enter">
+            <icon class="iconfont icon-you"></icon>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 巅峰榜 -->
+<view class="hot-list">
+  <view class="wrapper">
+    <view class="header clearfix">
+      <view class="left">
+        巅峰榜
+      </view>
+      <view class="right">
+        更多
+      </view>
+    </view>
+    <view class="list">
+      <view class="item clearfix" wx:for="{{hotList}}" wx:key="index">
+        <view class="left">
+          <view class="title">{{item.title}}</view>
+          <view class="no1 no"><navigator hover-class="none" url="/pages/details/details?id={{item.no1Id}}">1.{{item.no1}}</navigator></view>
+          <view class="no2 no"><navigator hover-class="none" url="/pages/details/details?id={{item.no2Id}}">2.{{item.no2}}</navigator></view>
+          <view class="no3 no"><navigator hover-class="none" url="/pages/details/details?id={{item.no3Id}}">3.{{item.no3}}</navigator></view>
+        </view>
+        <view class="right">
+          <view class="pic">
+            <image src="{{item.img}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

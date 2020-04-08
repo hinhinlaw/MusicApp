@@ -1,0 +1,57 @@
+<!-- 歌手介绍 -->
+<view class="header" style="background-image:url({{singerIcon}})">
+  <view class="title">{{singerName}}</view>
+  <view class="desc">{{singerBriefDescription}}</view>
+</view>
+
+<!-- 按钮 -->
+<view class="btn clearfix">
+  <view class="song-list {{active==0?'active':''}}" bindtap="toSongList">歌曲</view>
+  <view class="album {{active==1?'active':''}}" bindtap="toAlbumList">专辑</view>
+</view>
+
+<!-- 歌曲列表 -->
+<view class="list" hidden="{{active == 1}}">
+  <view class="wrapper">
+    <view class="item clearfix" wx:for="{{songList}}" wx:key="index">
+      <navigator url="/pages/details/details?id={{item.id}}" hover-class="none">
+        <view class="no">{{index+1}}</view>
+        <view class="profile">
+          <view class="song-name">{{item.name}}</view>
+          <view class="others clearfix">
+            <view class="tag">SQ</view>
+            <view class="tag hq">HQ</view>
+            <view class="singer">{{item.ar[0].name}}</view>
+          </view>
+        </view>
+        <view class="icon">
+          <icon class="iconfont icon-zantingbofang"></icon>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<!-- 专辑列表 -->
+<view class="album-list" hidden="{{active == 0}}">
+  <view class="list">
+    <view class="wrapper">
+    <view class="item clearfix" wx:for="{{singerAlbum}}" wx:key="index">
+      <navigator url="/pages/details/details?id={{item.id}}" hover-class="none">
+        <view class="pic">
+          <image src="{{item.picUrl}}"></image>
+        </view>
+        <view class="song-msg">
+          <view class="song-name">{{item.name}}</view>
+          <view class="singer clearfix">
+            <view>{{item.subType}}</view>
+          </view>
+        </view>
+        <view class="enter">
+          <icon class="iconfont icon-you"></icon>
+        </view>
+      </navigator>
+    </view>
+    </view>
+  </view>
+</view>

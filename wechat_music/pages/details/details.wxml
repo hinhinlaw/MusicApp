@@ -1,0 +1,141 @@
+<view class="bg" style="background-image:url({{poster}})"></view>
+<view class="header">
+  <view class="song-name">{{songName}}</view>
+  <view class="singer">{{singer}}</view>
+</view>
+
+<view class="poster" bindtap="playOrPause">
+  <view class="pic">
+    <image src="{{poster}}"></image>
+  </view>
+  <view wx:if="{{play}}" class="play">
+    <icon class="iconfont icon-bof"></icon>
+  </view>
+  <view wx:if="{{!play}}" class="pause">
+    <icon class="iconfont icon-zantingbofang"></icon>
+  </view>
+</view>
+
+<!-- 歌词 -->
+<view class="lyric">
+  <scroll-view class="box" scroll-y="true" scroll-with-animation="true">
+    <!-- <view class="item" style="margin-top:-{{marginTop}}px"> -->
+    <view class="item" style="transform:translateY(-{{marginTop}}px)">
+      <view class="single-lyric" wx:for="{{pureLyric}}" wx:key="index" class="{{currentIndex == index?'active':''}}">
+        <text>{{item}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 下载/收藏/分享/ -->
+<view class="download-collect-share">
+  <view class="download-collect clearfix">
+    <view class="download">
+      <icon class="iconfont icon-xiazai"></icon>
+    </view>
+    <view class="collect" bindtap="toggleCollect">
+      <icon class="iconfont icon-shoucang {{collect == true?'active':''}}"></icon>
+    </view>
+  </view>
+  <view class="share">
+    分享给微信好友
+  </view>
+</view>
+
+<!-- 歌手、专辑 -->
+<view class="singerAndAlbum">
+  <view class="wrapper">
+    <view class="header clearfix">
+      <view class="left">
+        歌手与专辑
+      </view>
+    </view>
+    <view class="list">
+      <view class="item clearfix">
+        <navigator url="/pages/singerpage/singerpage?id={{singerId}}" hover-class="none">
+          <view class="pic">
+            <image src="{{singerIcon}}"></image>
+          </view>
+          <view class="content">歌手 {{singer}}</view>
+          <view class="enter">
+            <icon class="iconfont icon-you"></icon>
+          </view>
+        </navigator>
+      </view>
+      <view class="item clearfix">
+        <navigator url="/pages/album/album?id={{albumId}}">
+        <view class="pic">
+          <image src="{{albumIcon}}"></image>
+        </view>
+        <view class="content">专辑 {{album}}</view>
+        <view class="enter">
+          <icon class="iconfont icon-you"></icon>
+        </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 歌曲推荐 -->
+<view class="song-recommend">
+  <view class="wrapper">
+    <view class="header clearfix">
+      <view class="left">
+        歌曲推荐
+      </view>
+    </view>
+    <view class="list">
+      <view class="item clearfix {{index==0?'hide':''}}" wx:for="{{songRecommend}}" wx:key="index">
+        <view class="pic">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="song-msg">
+          <view class="song-name">{{item.songName}}</view>
+          <view class="singer clearfix">
+            <view>SQ</view>
+            <view>{{item.singer}}</view>
+          </view>
+        </view>
+        <view class="enter">
+          <icon class="iconfont icon-you"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 评价 -->
+<view class="comment">
+  <view class="wrapper">
+    <view class="header clearfix">
+      <view class="left">
+        精彩评论
+      </view>
+    </view>
+    <view class="list">
+      <view class="item" wx:for="{{recommend}}" wx:key="index">
+        <view class="user clearfix">
+          <view class="pic">
+            <image src="{{item.icon}}"></image>
+          </view>
+          <view class="msg-info">
+            <view class="name">{{item.name}}</view>
+            <view class="time">
+              <text class="month">{{item.monthTime}}</text>
+              <text class="clock">{{item.particularTime}}</text>
+            </view>
+          </view>
+          <view class="like" bindtap="toggleLike">
+            <text>{{item.like}}万</text>
+            <icon class="iconfont icon-zanpress {{like==true?'active':''}}"></icon>
+          </view>
+        </view>
+        <view class="comment-content">
+          <text>{{item.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

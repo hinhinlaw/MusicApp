@@ -1,0 +1,48 @@
+<view class="song-list">
+  <view class="header clearfix">
+    <view class="bg" style="background-image:url({{coverImgUrl}})"></view>
+    <view class="wrapper">
+      <view class="top clearfix">
+        <view class="pic">
+          <image src="{{coverImgUrl}}"></image>
+        </view>
+        <view class="profile">
+          <view class="list-name">{{listName}}</view>
+          <view class="user clearfix">
+            <view class="icon">
+              <image src="{{icon}}"></image>
+            </view>
+            <view class="user-name">{{nickName}}</view>
+          </view>
+          <view class="abstract">{{description}}</view>
+        </view>
+      </view>
+      <view class="bottom clearfix">
+        <view class="collect">
+          <icon class="iconfont icon-shoucang"></icon>1.1万</view>
+        <view class="share">
+          <icon class="iconfont icon-fenxiang"></icon>
+          <text>分享</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="wrapper">
+      <view class="item clearfix" wx:for="{{songList}}" wx:key="index">
+        <navigator url="/pages/details/details?id={{item.id}}" hover-class="none">
+          <view class="no">{{index+1}}</view>
+          <view class="profile">
+            <view class="song-name">{{item.name}}</view>
+            <view class="others clearfix">
+              <view class="tag">SQ</view>
+              <view class="tag hq">HQ</view>
+              <view class="singer">{{item.ar[0].name}}</view>
+            </view>
+          </view>
+          <view class="icon"><icon class="iconfont icon-zantingbofang"></icon></view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

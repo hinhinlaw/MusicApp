@@ -1,0 +1,36 @@
+<scroll-view class="category-item" scroll-y="true" style="height:{{scrollHeight}}px;">
+  <view class="item" style="min-height:{{scrollHeight}}px;">
+    <view wx:for="{{categoryItem}}" wx:key="index" data-id="{{index}}" bindtap="itemclick" class="{{conId == index?'con':''}}" style="font-size:12px;">
+      {{item}}
+    </view>
+    <!-- <view>
+      电视
+    </view>
+    <view>
+      耳机
+    </view>
+    <view>
+      电脑
+    </view> -->
+  </view>
+</scroll-view>
+
+<scroll-view class="content-item" scroll-y="true" style="height:{{scrollHeight}}px;">
+  <view class="content" style="min-height:{{scrollHeight}}px">
+    <view class="list">
+      <!-- <view class="list-header">{{title[conId]}}</view> -->
+      <view class="list-content">
+        <view class="item" wx:for="{{hotSongList}}" wx:key="index">
+          <navigator url="/pages/songlist/songlist?id={{item.id}}" hover-class="none">
+            <view class="pic">
+              <image src="{{item.coverImgUrl}}"></image>
+            </view>
+            <view class="text">
+              <text>{{item.name}}</text>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

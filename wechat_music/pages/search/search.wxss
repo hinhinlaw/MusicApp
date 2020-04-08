@@ -1,0 +1,113 @@
+page{
+  background-color: #fafafa;
+}
+.search {
+
+}
+
+.search .box {
+  margin-top: 10px;
+  position: relative;
+  height: 26px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.search .box icon {
+  position: absolute;
+  left: 10px;
+  top: -4px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.search .box input {
+  position: absolute;
+  left: 30px;
+  top: 2px;
+  width: 300px;
+  font-size: 12px;
+}
+
+/* 搜索显示的内容 */
+.resultList{
+  background-color: #fff;
+}
+.resultList .resultItem{
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+  line-height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.resultList .resultItem icon{
+  color: #ccc;
+  margin-right: 15px;
+}
+.resultList .resultItem .song-name{
+  color: #69c3aa;
+  margin-right: 10px;
+    font-size: 14px;
+}
+.resultList .resultItem .singer{
+    font-size: 14px;
+}
+
+/* 热门搜索 */
+.hot-search{
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.hot-search .header{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.hot-search .search-list{}
+.hot-search .search-list view{
+  height: 20px;
+  line-height: 20px;
+  float: left;
+  font-size: 13px;
+  padding: 2px 10px;
+  border: 1px solid #69c3aa;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+/* 历史记录 */
+.history{
+  margin-top: 10px;
+}
+.history .header{}
+.history .header .left{
+  float: left;
+  font-weight: bold;
+}
+.history .header .right{
+  float: right;
+}
+.history .header .right icon{
+  font-size: 16px;
+  color: #ccc;
+  margin-top: -8px;
+}
+.history .history-list{
+  margin-top: 10px;
+}
+.history .history-list view{
+    height: 20px;
+  line-height: 20px;
+  float: left;
+  font-size: 13px;
+  padding: 2px 10px;
+  border: 1px solid #69c3aa;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
