@@ -3,7 +3,7 @@
   <view class="wrapper">
     <view class="box clearfix">
       <icon class="iconfont icon-xingtaiduICON_sousuo--"></icon>
-      <input type="text" placeholder="搜索音乐" bindinput="search"></input>
+      <input type="text" placeholder="搜索音乐" bindinput="onSearch"></input>
     </view>
     <view class="resultList" wx:for="{{songList}}" wx:key="index">
       <view class="resultItem">

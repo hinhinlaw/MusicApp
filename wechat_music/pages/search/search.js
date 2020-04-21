@@ -1,5 +1,7 @@
 //引入api文件
 var searchApi = require('../../api/search.js');
+//函数防抖
+var {debounce} = require('../../tools/tools');
 
 Page({
 
@@ -7,12 +9,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    songList:[],
-    show: false
+    songList: [],
+    show: false,
+    inputDebounce: null
   },
 
   //获取input输入值
   search(ev){
+    // console.log(arg);
     let _this = this;
     let keywords = ev.detail.value;
     let res = []
@@ -21,7 +25,7 @@ Page({
     if(keywords){
       searchApi.getSearchUrl(keywords, (data) => {
         res = data.data.result.songs.slice(0, 20);
-        console.log(res);
+        // console.log(res);
         res.forEach(item => {
           let obj = {};
           obj.songName = item.name;
@@ -44,12 +48,20 @@ Page({
       return;
     }
   },
+  onSearch(ev) {
+    // console.log(ev);
+    // 函数防抖
+    this.inputDebounce(ev);
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //用一个变量接收debounce方法return出来的函数，如果在onSearch中直接调用debounce，则每次都创建一个闭包，每次都return一个新的函数出来，就起不到防抖的作用了。
+    //假如触发了三次onSearch()方法，则return了三个function出来，每个function都clearTimeout之后执行setTimeout，所以就会执行三次search()方法，起不到防抖作用
+    this.inputDebounce = debounce(this.search,300);
   },
 
   /**
@@ -62,8 +74,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  },
+  onShow: function () {},
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -80,7 +91,7 @@ Page({
    */
   onUnload: function () {
     this.setData({
-      songList:[],
+      songList: [],
       show: false
     })
   },

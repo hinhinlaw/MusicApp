@@ -1,20 +1,21 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/singer/singer",
+    "pages/search/search",
     "pages/category/category",
+    "pages/singer/singer",
     "pages/album/album",
     "pages/singerpage/singerpage",
     "pages/details/details",
     "pages/songlist/songlist",
-    "pages/search/search",
     "pages/logs/logs"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#69c3aa",
     "navigationBarTitleText": "HALSTEAD音乐馆",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

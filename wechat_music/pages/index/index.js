@@ -102,18 +102,27 @@ Page({
     // ],
     hotList: []
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    //请求歌单详情
+  onLoad: function (options) {
     let _this = this;
     //请求热门歌单
     indexApi.getHighQualitySongList((res) => {
       // console.log(res)
       let songLists = res.data.playlists
-      // let songLists = res.data.playlists.slice(0, 6);
+      let arr = [];
+      for (let i = 0; i < 6; i++) {
+        let num = Math.ceil(Math.random() * 36);
+        arr.forEach(item => {
+          if (arr.indexOf(num) > -1) {
+            num = Math.ceil(Math.random() * 36);
+          }
+        })
+        arr.push(num);
+      }
+      // console.log(arr);
+      songLists = res.data.playlists.slice(0, 5);
       _this.setData({
         hotSongList: songLists
       })
@@ -231,14 +240,14 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
     let _this = this;
     wx.getSystemInfo({
       success(res) {
@@ -255,35 +264,72 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
-
+  //下拉更新热门歌单
+  onPullDownRefresh: function () {
+    setTimeout(() => {
+      wx.stopPullDownRefresh({
+        complete: (res) => {
+          let _this = this;
+          indexApi.getHighQualitySongList((res) => {
+            // console.log(res)
+            let songLists = res.data.playlists
+            let arr = [];
+            for (let i = 0; i < 6; i++) {
+              let num = Math.ceil(Math.random() * 36);
+              arr.forEach(item => {
+                if (arr.indexOf(num) > -1) {
+                  num = Math.ceil(Math.random() * 36);
+                }
+              })
+              arr.push(num);
+            }
+            // console.log(arr);
+            songLists = [];
+            let newSongLists = [];
+            for (let key in res.data.playlists) {
+              arr.forEach(item => {
+                if (item == key) {
+                  newSongLists.push(res.data.playlists[key]);
+                }
+              })
+            }
+            // songLists = res.data.playlists.slice(5, 11);
+            _this.setData({
+              hotSongList: newSongLists
+            })
+          })
+        },
+      })
+    }, 1200)
   },
+
+
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

@@ -1,5 +1,4 @@
 /* 搜索 */
-.search{}
 .search .box{
   height: 26px;
   width: 90%;
@@ -17,10 +16,12 @@
   font-size: 14px;
 }
 .search .box icon{
+  margin-top: -5px;
+  margin-left: 55%;
   /* float: left; */
-  position: absolute;
+  /* position: absolute;
   left: 54%;
-  top: 7px;
+  top: 7px; */
 }
 
 

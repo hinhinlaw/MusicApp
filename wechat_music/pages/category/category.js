@@ -12,6 +12,7 @@ Page({
     categoryItem:["华语","欧美","日语","韩语","粤语","流行", "摇滚", "民谣", "电子", "说唱", "轻音乐", "爵士","乡村","古典"]
   },
 
+
   itemclick(event) {
     // console.log(event);
     //获取触发对象中data每个id数据
@@ -19,12 +20,13 @@ Page({
     this.setData({
       conId: id
     })
+    //点击左侧tab时才请求数据
     categoryApi.getSongList(this.data.categoryItem[this.data.conId], (res) => {
-      console.log(res);
+      // console.log(res);
       this.setData({
         hotSongList: res.data.playlists
       })
-      console.log(this.data.hotSongList)
+      // console.log(this.data.hotSongList)
     })
   },
 
@@ -33,11 +35,11 @@ Page({
    */
   onLoad: function(options) {
     categoryApi.getSongList(this.data.categoryItem[this.data.conId],(res)=>{
-      console.log(res);
+      // console.log(res);
       this.setData({
         hotSongList:res.data.playlists
       })
-      console.log(this.data.hotSongList)
+      // console.log(this.data.hotSongList)
     })
   },
 
